@@ -11,7 +11,14 @@ namespace AULA11._05
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+                txtData.Text = DateTime.Now.ToString();
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            DateTime data = Calendario.SelectedDate;
+            txtData.Text = data.ToString();
         }
     }
 }
